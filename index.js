@@ -1,21 +1,20 @@
+const priceMilk = 15.678;
+const priceCheese = 123.965;
+const priceIce = 90.2345;
 
-const MILK = 15.678;
-const CHEESE = 123.965;
-const ICE = 90.2345;
-
-let maxPrice = Math.max(MILK,CHEESE,ICE);
+const maxPrice = Math.max(priceMilk, priceCheese, priceIce);
 document.writeln(`Найвища ціна за товар становить ${maxPrice} грн <br>`);
 
-let minPrice = Math.min(MILK,CHEESE,ICE);
+const minPrice = Math.min(priceMilk, priceCheese, priceIce);
 document.writeln(`Найнижча ціна за товар становить ${minPrice} грн <br>`);
 
-let totalPrice = MILK + CHEESE + ICE;
+const totalPrice = priceMilk + priceCheese + priceIce;
 document.writeln(`Загальна вартість всіх товарів: ${totalPrice} грн <br>`);
 
-let totalPriceWithoutPennies = Math.floor(MILK) + Math.floor(CHEESE) + Math.floor(ICE);
+const totalPriceWithoutPennies = Math.floor(priceMilk) + Math.floor(priceCheese) + Math.floor(priceIce);
 document.writeln(`Загальна вартість всіх товарів заокруглена в меншу сторону (без врахування копійок): ${totalPriceWithoutPennies} грн <br>`);
 
-let totalPriceUpToHundredth = Math.ceil(totalPriceWithoutPennies / 100) * 100;
+const totalPriceUpToHundredth = Math.ceil(totalPriceWithoutPennies / 100) * 100;
 document.writeln(`Загальна вартість всіх товарів заокруглена до сотень: ${totalPriceUpToHundredth} грн <br>`);
 
 if ((totalPriceWithoutPennies % 2) === 0) {
@@ -23,24 +22,26 @@ if ((totalPriceWithoutPennies % 2) === 0) {
 } else {
     document.writeln(`Число непарне <br>`);
 }
+const customerValue = 500;
 
-let restOfTheMoney = 500 - (MILK + CHEESE + ICE);
+const restOfTheMoney = customerValue - (priceMilk + priceCheese + priceIce);
 document.writeln(`Сума решти при оплаті товарів: ${restOfTheMoney} грн <br>`);
 
-let average = ( (MILK+CHEESE+ICE) / 3).toFixed(2);
+const average = ( (priceMilk + priceCheese + priceIce) / 3).toFixed(2);
 document.writeln(`Середнє значення цін становить: ${average} грн <br>`);
  
-let discount = Math.floor(Math.random() * 10);
+// const discount = Math.floor(Math.random() * 10);
+const discount = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
 document.writeln(`Знижка становить ${discount} % <br>`);
 
-let monetaryDiscount = ((totalPrice * discount) / 100).toFixed(2);
+const monetaryDiscount = +((totalPrice * discount) / 100);
 document.writeln(`Сума знижки в грошовому вимірі: ${monetaryDiscount} грн <br>`);
 
-let priceWithDiscount = (totalPrice - (totalPrice * discount / 100)).toFixed(2);
+const priceWithDiscount = +(totalPrice - (totalPrice * discount / 100));
 document.writeln(`Сума оплати із врахуванням знижки становить ${priceWithDiscount} грн <br>`);
 
-let cost = (totalPrice / 2).toFixed(2);
+const cost = +(totalPrice / 2);
 document.writeln(`Собівартість товарів становить: ${cost} грн <br>`);
 
-let netProfit = cost - monetaryDiscount;
+const netProfit = cost - monetaryDiscount;
 document.writeln(`Чистий прибуток становить: ${netProfit} грн <br>`);
